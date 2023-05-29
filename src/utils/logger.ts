@@ -11,8 +11,8 @@ logger.add(new winstonCloudWatch({
     logStreamName: 'test',
     createLogStream: true,
     awsConfig: {
-            accessKeyId: 'AKIAURUDUQPJERUJBLVO',
-            secretAccessKey: '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',
+            accessKeyId: '',
+            secretAccessKey: '',
             region: 'ap-southeast-2'
     }
 }))
