@@ -1,11 +1,16 @@
-import { Context, Handler, KinesisStreamEvent, KinesisStreamRecordPayload } from "aws-lambda";
+import { Context, Handler, KinesisStreamEvent, KinesisStreamRecordPayload, S3CreateEvent } from "aws-lambda";
 import atobLib from 'atob';
 import { ContactLensResponse } from "./types/ContactLens";
 import { processConctactLensResponse } from "./processor/contactLensService";
 import { logger } from "./utils/logger";
+import { getObject } from "./core/s3.service";
 
-export const handler: Handler = async (event: KinesisStreamEvent, context: Context) => {
+export const handler: Handler = async (event: S3CreateEvent, context: Context) => {
     logger.info('Lambda event payload:', event);
+    const records = await Promise.all(event.Records.map(async (record) => {
+      return getObject(record.s3.bucket.name, record.s3.object.key);
+    }));
+    // TODO: handle records
     if (!isKinesisEvent(event)) return;
     await Promise.all(event.Records.map(async (e) => await processKinesisData(e.kinesis)));
 }
