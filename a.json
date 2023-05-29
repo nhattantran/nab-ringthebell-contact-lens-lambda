@@ -1,0 +1,216 @@
+{
+    "AccountId": "312734942162",
+    "Categories": {
+        "MatchedCategories": [
+            "climate_change_interest"
+        ],
+        "MatchedDetails": {
+            "climate_change_interest": {
+                "PointsOfInterest": [
+                    {
+                        "BeginOffsetMillis": 12230,
+                        "EndOffsetMillis": 19940
+                    }
+                ]
+            }
+        }
+    },
+    "Channel": "VOICE",
+    "ContentMetadata": {
+        "Output": "Raw"
+    },
+    "ConversationCharacteristics": {
+        "Interruptions": {
+            "InterruptionsByInterrupter": {
+                "CUSTOMER": [
+                    {
+                        "BeginOffsetMillis": 15410,
+                        "DurationMillis": 2700,
+                        "EndOffsetMillis": 18110
+                    }
+                ]
+            },
+            "TotalCount": 1,
+            "TotalTimeMillis": 2699
+        },
+        "NonTalkTime": {
+            "Instances": [
+                {
+                    "BeginOffsetMillis": 3950,
+                    "DurationMillis": 5400,
+                    "EndOffsetMillis": 9350
+                }
+            ],
+            "TotalTimeMillis": 5400
+        },
+        "Sentiment": {
+            "OverallSentiment": {
+                "AGENT": 1.7,
+                "CUSTOMER": 2.5
+            },
+            "SentimentByPeriod": {
+                "QUARTER": {
+                    "AGENT": [
+                        {
+                            "BeginOffsetMillis": 0,
+                            "EndOffsetMillis": 5902,
+                            "Score": 0
+                        },
+                        {
+                            "BeginOffsetMillis": 5902,
+                            "EndOffsetMillis": 11805,
+                            "Score": 0
+                        },
+                        {
+                            "BeginOffsetMillis": 11805,
+                            "EndOffsetMillis": 17707,
+                            "Score": 0
+                        },
+                        {
+                            "BeginOffsetMillis": 17707,
+                            "EndOffsetMillis": 23610,
+                            "Score": 5
+                        }
+                    ],
+                    "CUSTOMER": [
+                        {
+                            "BeginOffsetMillis": 0,
+                            "EndOffsetMillis": 5387,
+                            "Score": 0
+                        },
+                        {
+                            "BeginOffsetMillis": 5387,
+                            "EndOffsetMillis": 10775,
+                            "Score": 5
+                        },
+                        {
+                            "BeginOffsetMillis": 10775,
+                            "EndOffsetMillis": 16162,
+                            "Score": 0
+                        },
+                        {
+                            "BeginOffsetMillis": 16162,
+                            "EndOffsetMillis": 21550,
+                            "Score": 0
+                        }
+                    ]
+                }
+            }
+        },
+        "TalkSpeed": {
+            "DetailsByParticipant": {
+                "AGENT": {
+                    "AverageWordsPerMinute": 63
+                },
+                "CUSTOMER": {
+                    "AverageWordsPerMinute": 103
+                }
+            }
+        },
+        "TalkTime": {
+            "DetailsByParticipant": {
+                "AGENT": {
+                    "TotalTimeMillis": 9470
+                },
+                "CUSTOMER": {
+                    "TotalTimeMillis": 4090
+                }
+            },
+            "TotalTimeMillis": 13560
+        },
+        "TotalConversationDurationMillis": 23610
+    },
+    "CustomerMetadata": {
+        "InputS3Uri": "s3://amazon-connect-b58e6fdea60f/connect/nab-ringthebell/CallRecordings/2023/05/29/8a4e1674-4fb2-48b2-962f-42e895a888b7_20230529T10:22_UTC.wav",
+        "ContactId": "8a4e1674-4fb2-48b2-962f-42e895a888b7",
+        "InstanceId": "ba13a334-0329-4bc8-9544-a82b970effaf"
+    },
+    "CustomModels": [],
+    "JobStatus": "COMPLETED",
+    "LanguageCode": "en-US",
+    "Participants": [
+        {
+            "ParticipantId": "CUSTOMER",
+            "ParticipantRole": "CUSTOMER"
+        },
+        {
+            "ParticipantId": "AGENT",
+            "ParticipantRole": "AGENT"
+        }
+    ],
+    "Transcript": [
+        {
+            "BeginOffsetMillis": 3060,
+            "Content": "Uh",
+            "EndOffsetMillis": 3950,
+            "Id": "29ebb524-0a3e-4116-ae95-9c8c3ad9af4b",
+            "LoudnessScore": [
+                86.76
+            ],
+            "ParticipantId": "AGENT",
+            "Sentiment": "NEUTRAL"
+        },
+        {
+            "BeginOffsetMillis": 9350,
+            "Content": "Thanks.",
+            "EndOffsetMillis": 9670,
+            "Id": "1332bfe3-8dc6-4cca-91e0-f588969385a4",
+            "LoudnessScore": [
+                76.66
+            ],
+            "ParticipantId": "CUSTOMER",
+            "Sentiment": "POSITIVE"
+        },
+        {
+            "BeginOffsetMillis": 12230,
+            "Content": "climate projects, we green projects at now.",
+            "EndOffsetMillis": 19940,
+            "Id": "2c7e1bdb-f0a7-4474-9c73-8643a0012147",
+            "LoudnessScore": [
+                80.33,
+                78.79,
+                72.08,
+                48.53,
+                49.35,
+                80.43,
+                79.51,
+                79.05
+            ],
+            "ParticipantId": "AGENT",
+            "Sentiment": "NEUTRAL"
+        },
+        {
+            "BeginOffsetMillis": 12380,
+            "Content": "Go ahead. Sure, going there. Yes.",
+            "EndOffsetMillis": 21550,
+            "Id": "e1fe70ed-a2b1-44c0-8b3b-cb5154fc5185",
+            "LoudnessScore": [
+                80.68,
+                78.71,
+                52.89,
+                81.71,
+                81,
+                80.17,
+                77.68,
+                49.13,
+                47.34,
+                77.01
+            ],
+            "ParticipantId": "CUSTOMER",
+            "Sentiment": "NEUTRAL"
+        },
+        {
+            "BeginOffsetMillis": 22740,
+            "Content": "Okay, thanks.",
+            "EndOffsetMillis": 23610,
+            "Id": "96ffeec8-6dd9-4669-909c-5147ee6c6f3d",
+            "LoudnessScore": [
+                67.43,
+                71.68
+            ],
+            "ParticipantId": "AGENT",
+            "Sentiment": "POSITIVE"
+        }
+    ],
+    "Version": "1.1.0"
+}

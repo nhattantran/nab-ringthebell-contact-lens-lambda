@@ -1,34 +1,25 @@
-import { Context, Handler, KinesisStreamEvent, KinesisStreamRecordPayload, S3CreateEvent } from "aws-lambda";
+import { Context, Handler, KinesisStreamEvent, KinesisStreamRecordPayload, S3CreateEvent, S3EventRecord } from "aws-lambda";
 import atobLib from 'atob';
-import { ContactLensResponse } from "./types/ContactLens";
-import { processConctactLensResponse } from "./processor/contactLensService";
-import { logger } from "./utils/logger";
-import { getObject } from "./core/s3.service";
+import { processS3Response } from "./processor/s3Service";
 
 export const handler: Handler = async (event: S3CreateEvent, context: Context) => {
-    logger.info('Lambda event payload:', event);
-    const records = await Promise.all(event.Records.map(async (record) => {
-      return getObject(record.s3.bucket.name, record.s3.object.key);
-    }));
+    console.log('Lambda event payload:', event);
     // TODO: handle records
-    if (!isKinesisEvent(event)) return;
-    await Promise.all(event.Records.map(async (e) => await processKinesisData(e.kinesis)));
+    if (!isS3Event(event)) return;
+    await Promise.all(event.Records.map(async (e) => await processS3Data(e)));
 }
 
-function isKinesisEvent(event: any): event is KinesisStreamEvent {
+function isS3Event(event: any): event is KinesisStreamEvent {
     return (
         Boolean(event.Records?.length) &&
-        event.Records[0].hasOwnProperty('kinesis')
+        event.Records[0].hasOwnProperty('s3')
     );
 }
 
-async function processKinesisData(eventPayload: KinesisStreamRecordPayload) {
+async function processS3Data(eventPayload: S3EventRecord) {
     try {
-        const decodedData = atobLib(eventPayload.data);
-        const prettyData = decodedData.replace('\\', '');
-        console.log('Kinesis data:', prettyData);
-        const contactLensResponse: ContactLensResponse = JSON.parse(decodedData);
-        await processConctactLensResponse(contactLensResponse);
+        console.log('S3 data:', eventPayload.s3);
+        await processS3Response(eventPayload);
     } catch (err) {
         console.log('Process failed', err as any)
     }
